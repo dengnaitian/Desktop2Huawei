@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>diff-report-releases-v0.11.0-vs-add_quant_mode</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\Deng\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.20\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><html><head><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body></body></html>
+    </head>
+    <body for="html-export" >
+      <div class="crossnote markdown-preview  "  >
+      
+<h1 id="功能差异报告releasesv0110--add_quant_mode">功能差异报告：<code>releases/v0.11.0</code> → <code>add_quant_mode</code> </h1>
+<p><strong>生成时间</strong>: 2026-03-05<br>
+<strong>仓库</strong>: vllm<br>
+<strong>变更规模</strong>: 59 个提交 · 130 个文件变更 · +4751 -4772 行</p>
+<hr>
+<h2 id="总体说明">总体说明 </h2>
+<p><code>add_quant_mode</code> 分支主要实现了 <strong>AFD (Attention-FFN Disaggregation)</strong> 架构支持，允许将 Transformer 模型的注意力层和 FFN 层分离部署到不同的计算节点上，从而实现更灵活的分布式推理。该分支还增加了量化模式配置、多流通信支持以及微批处理增强功能。</p>
+<hr>
+<h2 id="功能变更详情">功能变更详情 </h2>
+<h3 id="afd-attention-ffn-分离部署">AFD (Attention-FFN 分离部署) </h3>
+<p><strong>之前的行为</strong>：模型的前向推理在同一计算节点上完整执行，注意力和 FFN 层串联计算。</p>
+<p><strong>现在的行为</strong>：支持将注意力和 FFN 层分离到不同的计算节点（attention workers 和 ffn servers），通过 AFD 连接器进行节点间数据传输。</p>
+<p><strong>变化点</strong>：</p>
+<ul>
+<li>新增 AFD 配置系统，支持配置节点角色（attention/ffn）、连接器类型、通信端口等</li>
+<li>支持三种 AFD 连接器：dummy（本地测试）、p2p（点对点通信）、stepmesh（基于 StepMesh 的参数服务器）</li>
+<li>支持多阶段流水线并行（num_afd_stages），可将计算分成多个阶段</li>
+<li>新增 AFDMetadata，用于管理 AFD 模式下的元数据（token 分布、阶段索引等）</li>
+<li>在 ForwardContext 中集成 AFD 元数据，支持按阶段分割的注意力计算</li>
+</ul>
+<p><strong>涉及文件</strong>：<a href="file:///c:\Users\Deng\outputs\vllm\config\afd.py">vllm/config/afd.py</a>（新增）、<a href="file:///c:\Users\Deng\outputs\vllm\distributed\afd_transfer">vllm/distributed/afd_transfer/</a>（新增）、<a href="file:///c:\Users\Deng\outputs\vllm\forward_context.py">vllm/forward_context.py</a>（修改）、<a href="file:///c:\Users\Deng\outputs\vllm\attention\layer.py">vllm/attention/layer.py</a>（修改）</p>
+<hr>
+<h3 id="ffn-服务器模式">FFN 服务器模式 </h3>
+<p><strong>之前的行为</strong>：vLLM 只提供单一的服务入口，所有计算都在同一个进程中完成。</p>
+<p><strong>现在的行为</strong>：新增独立的 FFN 服务器入口点 <code>vllm fserver</code>，可以单独启动 FFN 计算节点。</p>
+<p><strong>变化点</strong>：</p>
+<ul>
+<li>新增 <code>vllm fserver</code> CLI 命令，用于启动 FFN 服务器</li>
+<li>新增 <code>GPUFFNModelRunner</code>，专门处理 FFN 服务器的计算逻辑</li>
+<li>FFN 服务器支持通过 AFD 连接器接收来自 attention 节点的数据并返回计算结果</li>
+<li>支持 tensor parallel 模式下的 FFN 服务器部署</li>
+</ul>
+<p><strong>涉及文件</strong>：<a href="file:///c:\Users\Deng\outputs\vllm\entrypoints\cli\fserver.py">vllm/entrypoints/cli/fserver.py</a>（新增）、<a href="file:///c:\Users\Deng\outputs\vllm\entrypoints\afd_ffn_server.py">vllm/entrypoints/afd_ffn_server.py</a>（新增）、<a href="file:///c:\Users\Deng\outputs\vllm\v1\worker\gpu_ffn_model_runner.py">vllm/v1/worker/gpu_ffn_model_runner.py</a>（新增）</p>
+<hr>
+<h3 id="量化模式配置-quantization-mode">量化模式配置 (Quantization Mode) </h3>
+<p><strong>之前的行为</strong>：量化配置通过模型配置单独设置，没有统一的量化模式参数。</p>
+<p><strong>现在的行为</strong>：在 AFD 配置中新增 <code>quant_mode</code> 参数，支持统一管理量化模式。</p>
+<p><strong>变化点</strong>：</p>
+<ul>
+<li>AFDConfig 新增 <code>quant_mode</code> 字段（int 类型），用于指定量化模式</li>
+<li>支持在分布式场景下配置量化参数</li>
+</ul>
+<p><strong>涉及文件</strong>：<a href="file:///c:\Users\Deng\outputs\vllm\config\afd.py">vllm/config/afd.py</a>（新增）</p>
+<hr>
+<h3 id="多流通信-multistream">多流通信 (MultiStream) </h3>
+<p><strong>之前的行为</strong>：节点间通信使用单一的通信流，可能导致通信与计算重叠不充分。</p>
+<p><strong>现在的行为</strong>：支持配置多个通信流，可指定专用的通信核心数。</p>
+<p><strong>变化点</strong>：</p>
+<ul>
+<li>AFDConfig 新增 <code>multistream_info</code> 配置项，支持 <code>enable</code> 和 <code>core_num</code> 参数</li>
+<li>当启用多流时，可以指定用于通信的 CPU 核心数，提高通信效率</li>
+</ul>
+<p><strong>涉及文件</strong>：<a href="file:///c:\Users\Deng\outputs\vllm\config\afd.py">vllm/config/afd.py</a>（新增）</p>
+<hr>
+<h3 id="微批处理增强-microbatchingubatching">微批处理增强 (Microbatching/UBatching) </h3>
+<p><strong>之前的行为</strong>：微批处理功能只能通过 <code>enable_dbo</code>（Dual Batch Overlap）启用，固定为 2 个批次。</p>
+<p><strong>现在的行为</strong>：支持直接配置微批大小，提供更灵活的微批处理控制。</p>
+<p><strong>变化点</strong>：</p>
+<ul>
+<li>ParallelConfig 新增 <code>ubatch_size</code> 参数，可直接指定微批数量</li>
+<li>新增 <code>use_ubatching</code> 和 <code>num_ubatches</code> 属性，用于判断是否启用微批处理及批次数量</li>
+<li>支持 DBO 和自定义 ubatch_size 两种微批处理模式</li>
+<li>CLI 新增 <code>--ubatch-size</code> 参数，支持从命令行配置</li>
+</ul>
+<p><strong>涉及文件</strong>：<a href="file:///c:\Users\Deng\outputs\vllm\config\parallel.py">vllm/config/parallel.py</a>（修改）、<a href="file:///c:\Users\Deng\outputs\vllm\engine\arg_utils.py">vllm/engine/arg_utils.py</a>（修改）</p>
+<hr>
+<h3 id="数据并行优化">数据并行优化 </h3>
+<p><strong>之前的行为</strong>：数据并行同步固定使用 NCCL 通信后端。</p>
+<p><strong>现在的行为</strong>：支持在数据并行同步中使用 Gloo 替代 NCCL，提供更灵活的通信后端选择。</p>
+<p><strong>变化点</strong>：</p>
+<ul>
+<li>ParallelConfig 新增 <code>disable_nccl_for_dp_synchronization</code> 参数</li>
+<li>当设置为 True 时，DP 同步使用 Gloo 而非 NCCL</li>
+</ul>
+<p><strong>涉及文件</strong>：<a href="file:///c:\Users\Deng\outputs\vllm\config\parallel.py">vllm/config/parallel.py</a>（修改）</p>
+<hr>
+<h3 id="deepseek-模型适配">DeepSeek 模型适配 </h3>
+<p><strong>之前的行为</strong>：DeepSeek V2/V3 模型支持 <code>deepseek_v32</code> 变体和 sparse MLA 注意力机制。</p>
+<p><strong>现在的行为</strong>：</p>
+<ul>
+<li>移除 <code>deepseek_v32</code> 模型类型支持</li>
+<li>移除 sparse MLA 注意力机制及相关后端</li>
+<li>DeepSeek MTP 模块适配 AFD 架构</li>
+</ul>
+<p><strong>变化点</strong>：</p>
+<ul>
+<li>ModelConfig 的 MLA 检测中移除 <code>deepseek_v32</code></li>
+<li>DeepSeekV2DecoderLayer 移除 <code>topk_indices_buffer</code> 参数</li>
+<li>DeepSeekMTP 新增对 AFD 配置的支持</li>
+<li>移除 flashmla_sparse 和 indexer MLA 后端</li>
+</ul>
+<p><strong>涉及文件</strong>：<a href="file:///c:\Users\Deng\outputs\vllm\model_executor\models\deepseek_v2.py">vllm/model_executor/models/deepseek_v2.py</a>（修改）、<a href="file:///c:\Users\Deng\outputs\vllm\model_executor\models\deepseek_mtp.py">vllm/model_executor/models/deepseek_mtp.py</a>（修改）、<a href="file:///c:\Users\Deng\outputs\vllm\config\model.py">vllm/config/model.py</a>（修改）</p>
+<hr>
+<h3 id="kv-缓存计算优化">KV 缓存计算优化 </h3>
+<p><strong>之前的行为</strong>：KV 缓存的缩放因子计算集成在注意力计算中。</p>
+<p><strong>现在的行为</strong>：新增独立的 KV 缩放因子计算函数，支持按需计算。</p>
+<p><strong>变化点</strong>：</p>
+<ul>
+<li>新增 <code>maybe_calc_kv_scales</code> 自定义操作，用于计算 KV 缓存的缩放因子</li>
+<li>支持通过 <code>enable_kv_scales_calculation</code> 元数据标志控制是否计算</li>
+</ul>
+<p><strong>涉及文件</strong>：<a href="file:///c:\Users\Deng\outputs\vllm\attention\layer.py">vllm/attention/layer.py</a>（修改）</p>
+<hr>
+<h2 id="新增的功能">新增的功能 </h2>
+<ul>
+<li><strong>AFD 架构支持</strong>：完整的 Attention-FFN 分离部署框架，包括配置系统、连接器抽象、元数据管理</li>
+<li><strong>FFN 服务器模式</strong>：独立的 FFN 计算节点，支持 <code>vllm fserver</code> 命令启动</li>
+<li><strong>量化模式配置</strong>：统一的量化模式参数 <code>quant_mode</code></li>
+<li><strong>多流通信</strong>：支持配置专用通信流的核心数</li>
+<li><strong>灵活的微批处理</strong>：支持直接配置微批大小 <code>ubatch_size</code></li>
+<li><strong>数据并行后端选择</strong>：支持在 DP 同步中使用 Gloo 替代 NCCL</li>
+</ul>
+<hr>
+<h2 id="不再兼容的变更">不再兼容的变更 </h2>
+<ul>
+<li><strong>移除 <code>deepseek_v32</code> 模型类型</strong>：ModelConfig 中不再支持 <code>deepseek_v32</code>，相关配置需要迁移到 <code>deepseek_v3</code></li>
+<li><strong>移除 sparse MLA 注意力机制</strong>：
+<ul>
+<li>Attention 层移除 <code>use_sparse</code> 参数</li>
+<li>移除 <code>flashmla_sparse</code> 和 <code>indexer</code> MLA 后端</li>
+<li>删除相关测试文件 <code>test_flashmla_sparse.py</code>、<code>test_sparse_mla_backends.py</code></li>
+</ul>
+</li>
+<li><strong>移除 DeepSeekV3 配置文件</strong>：删除 <code>vllm/transformers_utils/configs/deepseek_v3.py</code></li>
+<li><strong>DeepSeekV2DecoderLayer 构造函数变化</strong>：移除 <code>topk_indices_buffer</code> 参数</li>
+<li><strong>移除 MTP 测试文件</strong>：删除 <code>tests/v1/spec_decode/test_mtp.py</code></li>
+<li><strong>移除 DeepGemm 注意力测试</strong>：删除 <code>tests/kernels/attention/test_deepgemm_attention.py</code></li>
+<li><strong>移除 pack/unpack Triton 测试</strong>：删除 <code>tests/kernels/attention/test_pack_unpack_triton.py</code></li>
+<li><strong>MTP 名称变更</strong>：错误消息中 <code>mtp</code> 改为 <code>deepseek_mtp</code></li>
+</ul>
+<hr>
+<h2 id="提交历史">提交历史 </h2>
+<table>
+<thead>
+<tr>
+<th>SHA</th>
+<th>提交信息</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>507be5c8a</code></td>
+<td>start_load_kv return</td>
+</tr>
+<tr>
+<td><code>b13c8c63a</code></td>
+<td>fix bs&gt;64</td>
+</tr>
+<tr>
+<td><code>de5335674</code></td>
+<td>update_mla_attn_params for DBO,fix FIA</td>
+</tr>
+<tr>
+<td><code>5663992da</code></td>
+<td>shared_output=none,enable_force_load_balance</td>
+</tr>
+<tr>
+<td><code>886cb3fd8</code></td>
+<td>add afdconfig quant_mode</td>
+</tr>
+<tr>
+<td><code>75cd53ebc</code></td>
+<td>add multistream default configuration; modify npu hard coding</td>
+</tr>
+<tr>
+<td><code>4f0a88318</code></td>
+<td>modify running script</td>
+</tr>
+<tr>
+<td><code>72d012b74</code></td>
+<td>modify stream initialization</td>
+</tr>
+<tr>
+<td><code>0cd6873db</code></td>
+<td>add fix ubatch_size=3</td>
+</tr>
+<tr>
+<td><code>9dfc103f2</code></td>
+<td>remove dbo yield</td>
+</tr>
+<tr>
+<td><code>437c5a22e</code></td>
+<td>AFD refactor</td>
+</tr>
+<tr>
+<td><code>fe769707d</code></td>
+<td>AFDConnector, ubatch refactor</td>
+</tr>
+<tr>
+<td><code>3b7fd2176</code></td>
+<td>Add a multi-node startup script and a performance test script.</td>
+</tr>
+<tr>
+<td><code>1e345b068</code></td>
+<td>clean code</td>
+</tr>
+<tr>
+<td><code>10aa7425f</code></td>
+<td>[temp]graph curl slow,eager todo</td>
+</tr>
+<tr>
+<td><code>44bd28e65</code></td>
+<td>add multistream and core limitation of communication stream</td>
+</tr>
+<tr>
+<td><code>b20a5adad</code></td>
+<td>[temp] aclgraph + dbo + thread ,attn ok</td>
+</tr>
+<tr>
+<td><code>069db8987</code></td>
+<td>[temp] CustomOp attn comm</td>
+</tr>
+<tr>
+<td><code>1b42159de</code></td>
+<td>add num_ubatches</td>
+</tr>
+<tr>
+<td><code>eb8848cbf</code></td>
+<td>[temp] dbo + aclgraph + thread</td>
+</tr>
+<tr>
+<td><code>2453f0930</code></td>
+<td>add apply_dbo_yield</td>
+</tr>
+<tr>
+<td><code>b9f7683df</code></td>
+<td>add camp2pconnector and fused opapi, support Aclgraph.</td>
+</tr>
+<tr>
+<td><code>491a635b6</code></td>
+<td>Add the decode_only switch to shared_storage_connector.</td>
+</tr>
+<tr>
+<td><code>5f0943c49</code></td>
+<td>add switch of afd with distributed DP</td>
+</tr>
+<tr>
+<td><code>835e36b37</code></td>
+<td>加入所有量化和MTP所需代码，修正bug</td>
+</tr>
+<tr>
+<td><code>aa274e5dd</code></td>
+<td>ffn server use vllm serve and dp</td>
+</tr>
+<tr>
+<td><code>01186849c</code></td>
+<td>add extends TBO</td>
+</tr>
+<tr>
+<td><code>d4ff4731a</code></td>
+<td>Fix: For MTP layer, transform mlp.gate into gate</td>
+</tr>
+<tr>
+<td><code>ed84d28e2</code></td>
+<td>[afd] DBO adaption</td>
+</tr>
+<tr>
+<td><code>db39fd357</code></td>
+<td>cam support aclgraph full-graph.</td>
+</tr>
+<tr>
+<td><code>c64d0dcc4</code></td>
+<td>Fix: MTP/AFD single-machine load weights</td>
+</tr>
+<tr>
+<td><code>1d9ab3355</code></td>
+<td>去除多余代码</td>
+</tr>
+<tr>
+<td><code>2b2579157</code></td>
+<td>[temp] ubatch adaption v0.1</td>
+</tr>
+<tr>
+<td><code>5316eb4e7</code></td>
+<td>[AFD][M2N]ffn side support dp</td>
+</tr>
+<tr>
+<td><code>a50175a74</code></td>
+<td>cam aclgraph ok.</td>
+</tr>
+<tr>
+<td><code>17d02811a</code></td>
+<td>[BugFix]support NPU run p2p</td>
+</tr>
+<tr>
+<td><code>ff7a63d86</code></td>
+<td>[AFD]add <a href="http://ffn.sh">ffn.sh</a> and online_attn.sh</td>
+</tr>
+<tr>
+<td><code>658580f6a</code></td>
+<td>fix log for graph</td>
+</tr>
+<tr>
+<td><code>1a8b6c6c1</code></td>
+<td>remove original decodelayer forward</td>
+</tr>
+<tr>
+<td><code>df2b67daa</code></td>
+<td>add attn side send recv multi stream</td>
+</tr>
+<tr>
+<td><code>b225c24c8</code></td>
+<td>modify deepseekv2model and decodelayer forward</td>
+</tr>
+<tr>
+<td><code>c9cbf11f8</code></td>
+<td>add</td>
+</tr>
+<tr>
+<td><code>28e926ef7</code></td>
+<td>add</td>
+</tr>
+<tr>
+<td><code>ca5c66047</code></td>
+<td>add</td>
+</tr>
+<tr>
+<td><code>e1c8c9291</code></td>
+<td>temp</td>
+</tr>
+<tr>
+<td><code>e15bfeee1</code></td>
+<td>temp</td>
+</tr>
+<tr>
+<td><code>ca9d6d459</code></td>
+<td>add first version vllm afd adapt ascend</td>
+</tr>
+<tr>
+<td><code>6c9f4c449</code></td>
+<td>add ascend connector</td>
+</tr>
+<tr>
+<td><code>f69fdd6eb</code></td>
+<td>add metadata</td>
+</tr>
+<tr>
+<td><code>4d1a48601</code></td>
+<td>rebase from jcz-afd-dbo</td>
+</tr>
+</tbody>
+</table>
+
+      </div>
+      
+      
+    </body>
+    
+    
+    
+    
+    
+  </html>
